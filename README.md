@@ -17,5 +17,6 @@ pio run
 To simulate this project, install [Wokwi for VS Code](https://marketplace.visualstudio.com/items?itemName=wokwi.wokwi-vscode). Open the project directory in Visual Studio Code, press **F1** and select "Wokwi: Start Simulator".
 
 Once the simulation is running, open http://localhost:8180 in your web browser to interact with the simulated HTTP server.
+
 ## 시연 영상
 ![시연 영상](demo_video/demo.gif)
