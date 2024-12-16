@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "author": "Your Name",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -100, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": -182.1,
+      "left": 282.6,
+      "attrs": { "temperature": "-8.1", "humidity": "21.5" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": -99.2,
+      "left": 399.2,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-servo", "id": "servo", "top": -347.6, "left": 240, "attrs": {} },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb",
+      "top": 100,
+      "left": 400,
+      "attrs": { "common": "cathode" }
+    },
+    { "type": "wokwi-photoresistor", "id": "ldr", "top": 150, "left": 100, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "resistor1",
+      "top": 253.55,
+      "left": 259.2,
+      "attrs": { "value": "220" }
+    },
+    { "type": "wokwi-buzzer", "id": "buzzer", "top": -208.8, "left": 1.8, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "resistor2",
+      "top": 215.15,
+      "left": 259.2,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "resistor3",
+      "top": 282.35,
+      "left": 259.2,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "dht:SDA", "uno:2", "green", [ "v0" ] ],
+    [ "dht:VCC", "uno:5V", "red", [ "v192", "h-134.4" ] ],
+    [ "dht:GND", "uno:GND.2", "black", [ "v182.4", "h-153.6" ] ],
+    [ "servo:GND", "uno:GND.2", "black", [ "h0" ] ],
+    [ "servo:V+", "uno:5V", "green", [ "h0" ] ],
+    [ "servo:PWM", "uno:9", "green", [ "h0" ] ],
+    [ "lcd:GND", "uno:GND.2", "black", [ "h-57.6", "v259.2", "h-163.2" ] ],
+    [ "rgb:R", "resistor2:2", "red", [ "v0" ] ],
+    [ "resistor2:1", "uno:7", "red", [ "v0", "h-67.2" ] ],
+    [ "rgb:COM", "uno:GND.2", "black", [ "v86", "h-245.2" ] ],
+    [ "rgb:G", "resistor1:2", "green", [ "v0" ] ],
+    [ "resistor1:1", "uno:6", "green", [ "v0", "h-48" ] ],
+    [ "rgb:B", "resistor3:2", "blue", [ "v0" ] ],
+    [ "resistor3:1", "uno:5", "blue", [ "v0", "h-48" ] ],
+    [ "lcd:VCC", "uno:5V", "red", [ "h0" ] ],
+    [ "lcd:SDA", "uno:A4", "green", [ "h0" ] ],
+    [ "lcd:SCL", "uno:A5", "green", [ "h0" ] ],
+    [ "buzzer:1", "uno:GND.2", "green", [ "v0" ] ],
+    [ "buzzer:2", "uno:12", "green", [ "v0", "h86" ] ]
+  ],
+  "dependencies": {}
+}
